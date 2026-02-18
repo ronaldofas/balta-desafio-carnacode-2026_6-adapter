@@ -20,19 +20,21 @@ namespace DesignPatternChallenge
 
     public class PaymentRequest
     {
-        public string CustomerEmail { get; set; }
+        // Correção: inicialização padrão para evitar warnings de nullable
+        public string CustomerEmail { get; set; } = string.Empty;
         public decimal Amount { get; set; }
-        public string CreditCardNumber { get; set; }
-        public string Cvv { get; set; }
+        public string CreditCardNumber { get; set; } = string.Empty;
+        public string Cvv { get; set; } = string.Empty;
         public DateTime ExpirationDate { get; set; }
-        public string Description { get; set; }
+        public string Description { get; set; } = string.Empty;
     }
 
     public class PaymentResult
     {
         public bool Success { get; set; }
-        public string TransactionId { get; set; }
-        public string Message { get; set; }
+        // Correção: inicialização padrão para evitar warnings de nullable
+        public string TransactionId { get; set; } = string.Empty;
+        public string Message { get; set; } = string.Empty;
     }
 
     public enum PaymentStatus
@@ -87,10 +89,11 @@ namespace DesignPatternChallenge
 
     public class LegacyTransactionResponse
     {
-        public string AuthCode { get; set; }
-        public string ResponseCode { get; set; }
-        public string ResponseMessage { get; set; }
-        public string TransactionRef { get; set; }
+        // Correção: inicialização padrão para evitar warnings de nullable
+        public string AuthCode { get; set; } = string.Empty;
+        public string ResponseCode { get; set; } = string.Empty;
+        public string ResponseMessage { get; set; } = string.Empty;
+        public string TransactionRef { get; set; } = string.Empty;
     }
 
     // Implementação moderna que funciona bem
@@ -158,9 +161,11 @@ namespace DesignPatternChallenge
         }
     }
 
-    class Program
+    // Correção: classe renomeada de Program para ChallengeDemo e método Main
+    // renomeado para RunChallenge para evitar conflito com o novo Program.cs
+    class ChallengeDemo
     {
-        static void Main(string[] args)
+        static void RunChallenge(string[] args)
         {
             Console.WriteLine("=== Sistema de Checkout ===\n");
 
